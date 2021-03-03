@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Bookmark} from 'src/app/models/bookmark.model';
 import {BookmarkService} from 'src/app/services/bookmark.service';
+import {BookmarkStore} from '../../store/bookmark.store';
+import {Store} from '@ngrx/store/src/store';
 
 @Component({
   selector: 'app-add-bookmark',
@@ -15,7 +17,7 @@ export class AddBookmarkComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private bookmarkService: BookmarkService) {
+  constructor(private bookmarkService: BookmarkService, private store: Store<BookmarkStore>) {
   }
 
   ngOnInit(): void {
@@ -27,6 +29,11 @@ export class AddBookmarkComponent implements OnInit {
       url: this.bookmark.url,
       group: this.bookmark.group,
     };
+
+    this.store.dispatch({
+      type: 'ADD_BOOKMARK',
+      payload: data
+    });
 
     this.bookmarkService.create(data)
       .subscribe(
