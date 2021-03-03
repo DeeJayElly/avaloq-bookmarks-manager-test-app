@@ -8,6 +8,8 @@ import {AddBookmarkComponent} from './components/add-bookmark/add-bookmark.compo
 import {BookmarkDetailsComponent} from './components/bookmark-details/bookmark-details.component';
 import {BookmarksListComponent} from './components/bookmarks-list/bookmarks-list.component';
 import {BookmarkService} from './services/bookmark.service';
+import {StoreModule} from '@ngrx/store/src/store_module';
+import {addBookmarkReducer} from './reducers/bookmark.reducer';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {BookmarkService} from './services/bookmark.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({bookmark: addBookmarkReducer}),
   ],
   providers: [
     BookmarkService,
