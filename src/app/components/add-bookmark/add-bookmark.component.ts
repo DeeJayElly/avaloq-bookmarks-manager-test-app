@@ -9,9 +9,9 @@ import {BookmarkService} from 'src/app/services/bookmark.service';
 })
 export class AddBookmarkComponent implements OnInit {
   bookmark: Bookmark = {
-    title: '',
-    description: '',
-    published: false
+    name: '',
+    url: '',
+    group: ''
   };
   submitted = false;
 
@@ -23,8 +23,9 @@ export class AddBookmarkComponent implements OnInit {
 
   saveBookmark(): void {
     const data = {
-      title: this.bookmark.title,
-      description: this.bookmark.description
+      name: this.bookmark.name,
+      url: this.bookmark.url,
+      group: this.bookmark.group,
     };
 
     this.bookmarkService.create(data)
@@ -41,9 +42,9 @@ export class AddBookmarkComponent implements OnInit {
   newBookmark(): void {
     this.submitted = false;
     this.bookmark = {
-      title: '',
-      description: '',
-      published: false
+      name: '',
+      url: '',
+      group: '',
     };
   }
 

@@ -4,14 +4,14 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="title"
+        placeholder="Search by name"
+        [(ngModel)]="name"
       />
       <div class="input-group-append">
         <button
           class="btn btn-outline-secondary"
           type="button"
-          (click)="searchTitle()"
+          (click)="searchName()"
         >
           Search
         </button>
@@ -27,7 +27,7 @@
         [class.active]="i == currentIndex"
         (click)="setActiveBookmark(bookmark, i)"
       >
-        {{ bookmark.title }}
+        {{ bookmark.name }}
       </li>
     </ul>
 
@@ -39,15 +39,15 @@
     <div *ngIf="currentBookmark">
       <h4>Bookmark</h4>
       <div>
-        <label><strong>Title:</strong></label> {{ currentBookmark.title }}
+        <label><strong>Name:</strong></label> {{ currentBookmark.name }}
       </div>
       <div>
-        <label><strong>Description:</strong></label>
-        {{ currentBookmark.description }}
+        <label><strong>Url:</strong></label>
+        {{ currentBookmark.url }}
       </div>
       <div>
-        <label><strong>Status:</strong></label>
-        {{ currentBookmark.published ? "Published" : "Pending" }}
+        <label><strong>Group:</strong></label>
+        {{ currentBookmark.group }}
       </div>
 
       <a class="badge badge-warning" routerLink="/bookmarks/{{ currentBookmark.id }}">

@@ -37,7 +37,7 @@ export class BookmarkService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Bookmark[]> {
-    return this.http.get<Bookmark[]>(`${baseUrl}?title=${title}`);
+  findByName(name: string): Observable<Bookmark[]> {
+    return this.http.get<Bookmark[]>(`${baseUrl}?title=${name}`);
   }
 }

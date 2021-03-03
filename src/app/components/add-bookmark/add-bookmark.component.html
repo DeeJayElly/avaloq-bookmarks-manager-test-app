@@ -2,25 +2,38 @@
   <div class="submit-form">
     <div *ngIf="!submitted">
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="name">Name</label>
         <input
           type="text"
           class="form-control"
-          id="title"
+          id="name"
           required
-          [(ngModel)]="bookmark.title"
-          name="title"
+          [(ngModel)]="bookmark.name"
+          name="name"
         />
       </div>
 
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="url">Url</label>
         <input
+          type="text"
           class="form-control"
-          id="description"
+          id="url"
           required
-          [(ngModel)]="bookmark.description"
-          name="description"
+          [(ngModel)]="bookmark.url"
+          name="url"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="url">Group</label>
+        <input
+          type="text"
+          class="form-control"
+          id="group"
+          required
+          [(ngModel)]="bookmark.group"
+          name="group"
         />
       </div>
 

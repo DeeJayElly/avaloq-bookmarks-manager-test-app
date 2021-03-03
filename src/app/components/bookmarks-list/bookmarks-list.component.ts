@@ -11,7 +11,7 @@ export class BookmarksListComponent implements OnInit {
   bookmarks?: Bookmark[];
   currentBookmark?: Bookmark;
   currentIndex = -1;
-  title = '';
+  name = '';
 
   constructor(private bookmarkService: BookmarkService) {
   }
@@ -55,11 +55,10 @@ export class BookmarksListComponent implements OnInit {
         });
   }
 
-  searchTitle(): void {
+  searchName(): void {
     this.currentBookmark = undefined;
     this.currentIndex = -1;
-
-    this.bookmarkService.findByTitle(this.title)
+    this.bookmarkService.findByName(this.name)
       .subscribe(
         data => {
           this.bookmarks = data;

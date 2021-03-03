@@ -10,9 +10,9 @@ import {BookmarkService} from '../../services/bookmark.service';
 })
 export class BookmarkDetailsComponent implements OnInit {
   currentBookmark: Bookmark = {
-    title: '',
-    description: '',
-    published: false
+    name: '',
+    url: '',
+    group: ''
   };
   message = '';
 
@@ -33,27 +33,6 @@ export class BookmarkDetailsComponent implements OnInit {
         data => {
           this.currentBookmark = data;
           console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
-
-  updatePublished(status: boolean): void {
-    const data = {
-      title: this.currentBookmark.title,
-      description: this.currentBookmark.description,
-      published: status
-    };
-
-    this.message = '';
-
-    this.bookmarkService.update(this.currentBookmark.id, data)
-      .subscribe(
-        response => {
-          this.currentBookmark.published = status;
-          console.log(response);
-          this.message = response.message ? response.message : 'This bookmark was updated successfully!';
         },
         error => {
           console.log(error);

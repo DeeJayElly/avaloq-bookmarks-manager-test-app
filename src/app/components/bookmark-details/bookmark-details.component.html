@@ -3,46 +3,36 @@
     <h4>Bookmark</h4>
     <form>
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="name">Name</label>
         <input
           type="text"
           class="form-control"
-          id="title"
-          [(ngModel)]="currentBookmark.title"
-          name="title"
+          id="name"
+          [(ngModel)]="currentBookmark.name"
+          name="name"
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="url">Url</label>
         <input
           type="text"
           class="form-control"
-          id="description"
-          [(ngModel)]="currentBookmark.description"
-          name="description"
+          id="url"
+          [(ngModel)]="currentBookmark.url"
+          name="url"
         />
       </div>
-
       <div class="form-group">
-        <label><strong>Status:</strong></label>
-        {{ currentBookmark.published ? "Published" : "Pending" }}
+        <label for="group">Group</label>
+        <input
+          type="text"
+          class="form-control"
+          id="group"
+          [(ngModel)]="currentBookmark.group"
+          name="group"
+        />
       </div>
     </form>
-
-    <button
-      class="badge badge-primary mr-2"
-      *ngIf="currentBookmark.published"
-      (click)="updatePublished(false)"
-    >
-      UnPublish
-    </button>
-    <button
-      *ngIf="!currentBookmark.published"
-      class="badge badge-primary mr-2"
-      (click)="updatePublished(true)"
-    >
-      Publish
-    </button>
 
     <button class="badge badge-danger mr-2" (click)="deleteBookmark()">
       Delete

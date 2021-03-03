@@ -1,6 +1,6 @@
 export class Bookmark {
-  id?: any;
-  title?: string;
-  description?: string;
-  published?: boolean;
+  id?: number;
+  name?: string;
+  url?: string;
+  group?: string;
 }
