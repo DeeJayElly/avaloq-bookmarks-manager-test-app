@@ -1,4 +1,4 @@
-export class Bookmark {
+export interface Bookmark {
   id?: number;
   name?: string;
   url?: string;
