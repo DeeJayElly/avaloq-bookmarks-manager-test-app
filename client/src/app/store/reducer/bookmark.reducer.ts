@@ -1,5 +1,4 @@
-import {Action} from '@ngrx/store';
-import {Bookmark} from '../models/bookmark.model';
+import {Bookmark} from '../../models/bookmark.model';
 
 export const ADD_BOOKMARK = 'ADD_BOOKMARK';
 
