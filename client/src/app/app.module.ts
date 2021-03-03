@@ -9,7 +9,7 @@ import {BookmarkDetailsComponent} from './components/bookmark-details/bookmark-d
 import {BookmarksListComponent} from './components/bookmarks-list/bookmarks-list.component';
 import {BookmarkService} from './services/bookmark.service';
 import {StoreModule} from '@ngrx/store/src/store_module';
-import {addBookmarkReducer} from './reducers/bookmark.reducer';
+import {addBookmarkReducer} from './store/reducer/bookmark.reducer';
 
 @NgModule({
   declarations: [
